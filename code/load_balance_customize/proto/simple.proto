@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "etcd/code/load_balance_customize/proto;proto";
+
+package proto;
+
+message SimpleRequest {
+    string data = 1;
+}
+
+message SimpleResponse {
+    int32 code = 1;
+    string value = 2;
+}
+
+service Simple{
+    rpc Route(SimpleRequest) returns (SimpleResponse){};
+}
